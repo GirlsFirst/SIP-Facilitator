@@ -9,12 +9,21 @@ Date Created: May 2020
 '''
 
 #The code below displays the base requirements for the project
+
+#TODO: Write the opening part of the story
 print ("What a beautiful jungle!")
 print("I should go exploring!")
+
+#TODO: Create a variable to hold the user's response to your first question and ask the first question.
 answer = input ("Should I go left or right? ")
+
+
+#TODO: Write an if conditional that checks the answer to your question
 if (answer == "left"):
     print("Go to the Jurassic scene")
     print("Ahhh, time to relax!")
+    
+#TODO: Write an else conditional if the condition is not met
 else:
     print("Go to the Wetland scene")
     print("This place looks tropical!")
