@@ -1,9 +1,10 @@
-#conditional_solution.py:
-#This is the solution file for conditional.py: an intro python file to get you familiar 
-#with writing conditionals in python!
-#
-#@author: <Insert Your Name Here!>
-#
+'''
+conditionals.py
+Description: Intro Python File for you to practice writing conditionals
+
+Author: 
+Date Created: 
+'''
 
 #Here at the top we include any libraries. We will discuss this later in the unit!
 import random
