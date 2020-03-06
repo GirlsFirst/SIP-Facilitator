@@ -34,7 +34,7 @@ ctx.fill();
 ctx.closePath();
 */
 
-var x = canvas.width/2; //Starts at 240
+var x = canvas.width/8; //Starts at 60
 var y = canvas.height-30; //Starts at 290
 
 var dx = 2; //Value of the distance to move from x after each frame
