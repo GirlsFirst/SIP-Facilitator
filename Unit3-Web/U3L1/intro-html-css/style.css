@@ -9,3 +9,11 @@ h1 {
     font-style: italic;
     color: #37ffde;
   }
+
+.custom-content {
+    color: red;
+  }
+
+#special {
+    color: green;
+  }
