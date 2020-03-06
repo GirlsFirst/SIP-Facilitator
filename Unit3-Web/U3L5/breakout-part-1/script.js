@@ -3,13 +3,16 @@ breakout-part-1
 Facilitator Code
 SIP U3L5 
 
-Sample code for breakout part 1
+Sample code for Breakout Part 1
 by Girls Who Code
 March 2020
+
+This reflects the code at the end of Lesson 5, Part 1.
 
 This project is adapted from the 2D breakout game using pure JavaScript
 https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript 
 created for Mozilla by the amazing MDN contributors.
+
 */
 
 
@@ -69,10 +72,9 @@ function drawBall() {
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
+
     x += dx;
     y += dy;
 }
 
 */
-
-
