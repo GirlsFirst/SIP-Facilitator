@@ -1,0 +1,103 @@
+body {
+    background-image: linear-gradient(to bottom right, lightgray, gray);
+    font-family: Tahoma, Geneva, sans-serif;
+  }
+  
+#hemingway-quote {
+    font-style: italic;
+  }
+  
+.cats-container {
+    /* try adding some flexbox styling here */
+    display: flex;
+    background-color: lavenderblush;
+  }
+  
+.cats-container > div {
+    width: 150px;
+    margin: 10px;
+  }
+  
+.cats-container > div > img {
+     border-radius: 15px; 
+  }
+  
+.cats-container > div > img:hover {
+     opacity: .5;
+  }
+  
+#dedication-message {
+     text-align: center; 
+  }
+  
+.box-container {
+    color: blue;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* ******************* */
+  
+.flex-container {
+    display: flex;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.flex-container {
+    display: flex;
+    height: 200px;
+    align-items: center;
+  }
+  
+.flex-container {
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  
+  
