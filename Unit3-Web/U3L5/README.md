@@ -1,6 +1,11 @@
 # Lesson 5: Breakout Part 1
 
 ## Exploration Activities
+### Student Starter Code
+- Add here
+
+### Facilitator Sample Code
+- Add here
 
 ## Project
 ### Student Starter Code
