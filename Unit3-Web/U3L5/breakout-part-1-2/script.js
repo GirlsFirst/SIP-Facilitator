@@ -42,9 +42,14 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
 
-    if(y < 0){
-        dy = -dy;
+    //Add collision detection for right and left of canvas
+    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        dx = -dx;
     }
+    //Add collision detection for bottom and top of canvas
+    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+        dy = -dy;
+    }  
 
     //Increment to change location of ball
     x += dx; //This is the same as x = x + dx
