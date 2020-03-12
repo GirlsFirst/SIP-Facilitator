@@ -7,7 +7,7 @@ Sample code for Breakout Part 1
 by Girls Who Code
 March 2020
 
-NOTE: This reflects the code at the end of LESSON 5, PART 3
+NOTE: This reflects the code at the end of LESSON 5, PART 4
 
 This project is adapted from the 2D breakout game using pure JavaScript
 https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript 
@@ -60,14 +60,27 @@ function draw() {
     drawBall();
     drawPaddle();
 
-    //Add collision detection for right and left of canvas
+    //Add collision detection for right and left of canvas and reverse ball direction
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    //Add collision detection for bottom and top of canvas
-    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+
+    //Add collision detection for top of canvas and reverse the ball direction
+    if(y + dy < ballRadius) {
+    dy = -dy;
+    //Add collision detection for top of canvas to end the game
+    } else if(y + dy > canvas.height-ballRadius) { 
+    //Add your if statement here to test if the ball and paddle have intersected
+        if(x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
-    }  
+        }
+        else {
+         alert("GAME OVER");
+         document.location.reload();
+         clearInterval(interval);
+        }
+    }
+
 
     //Increment to change location of ball
     x += dx; //This is the same as x = x + dx
@@ -113,4 +126,5 @@ function keyUpHandler(e) {
 }
 
 //How often we clear and redraw the canvas
-setInterval(draw, 10);
+var interval = setInterval(draw,10)
+//setInterval(draw, 10);
