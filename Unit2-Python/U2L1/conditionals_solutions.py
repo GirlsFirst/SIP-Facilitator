@@ -11,31 +11,28 @@ Date Created: May 2020
 import random
 
 #These next lines of codes generate a random number from 1 to 9
-random.seed(1)
 num = random.randint(1,9)
 
 #Uncomment the line #15 and comment line #12 when facilitating the debugging activity.
 #num = 5
 
-#TODO: write a line of code below that prints out the value of num
+# TODO: write a line of code below that prints out the value of num
 print (num)
 
-#TODO: Write a conditional statement that checks if num is less than 5. 
+# TODO: Write a conditional statement that checks if num is less than 5. 
 # If it is, print out a statement that reads the number is less than 5
 
 
 if (num < 5):
     print ("The number is less than 5")
 
-#TODO: Update your conditional statement so that if the number is not less than 5 
-# it prints out “The number is greater than 5”.
+# TODO: Update your conditional statement so that if the number is not less than 5 it prints out The number is greater than 5
 if (num < 5):
     print ("The number is less than 5")
 else:
     print ("The number is greater than 5!")
 
-#TODO: Update the conditional once more that checks if num = 5 and 
-# prints out “The number is 5!”
+# TODO: Update the conditional once more that checks if num = 5 and prints out The number is 5!
 if (num < 5):
     print ("The number is less than 5")
 elif (num == 5):
