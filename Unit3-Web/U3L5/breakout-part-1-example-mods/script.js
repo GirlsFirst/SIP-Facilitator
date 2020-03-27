@@ -7,7 +7,7 @@ Sample code for Breakout Part 1
 by Girls Who Code
 March 2020
 
-NOTE: This reflects the code at the end of PART 4: THE PADDLE
+NOTE: This reflects the code at the end of PART 5: GAME OVER
 
 This project is adapted from the 2D breakout game using pure JavaScript
 https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript 
@@ -26,11 +26,14 @@ var ctx = canvas.getContext("2d");
 var x = canvas.width/8; //Starts at 60
 var y = canvas.height-30; //Starts at 290
 
+//CHANGE THE SPEED OF THE BALL
 var dx = 2; //Value of the distance to move from x after each frame
 var dy = -2; //Value of the distance to move from y after each frame
 
+//CHANGE BALL SIZE
 var ballRadius = 10;
 
+//CHANGE PADDLE SIZE
 var paddleHeight = 10;
 var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth) / 2;
@@ -39,11 +42,20 @@ var paddleX = (canvas.width-paddleWidth) / 2;
 var rightPressed = false;
 var leftPressed = false;
 
+//CHANGE BACKGROUND COLOR
+function drawBackground(){
+    ctx.beginPath();
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fa7815";
+    ctx.fill();
+    ctx.closePath();
+}
+
 //DEFINE YOUR FUNCTIONS HERE
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#0095DD"; //CHANGE THE BALL COLOR
     ctx.fill();
     ctx.closePath();
 }
@@ -58,17 +70,32 @@ function drawPaddle() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //drawBackground(); //UNCOMMENT TO CHANGE BACKGROUND COLOR
     drawBall();
     drawPaddle();
 
-    //Add collision detection for right and left of canvas
+    //Add collision detection for right and left of canvas and reverse ball direction
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    //Add collision detection for bottom and top of canvas
-    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+
+    //Add collision detection for top of canvas and reverse the ball direction
+    if(y + dy < ballRadius) {
+    dy = -dy;
+    //Add collision detection for top of canvas to end the game
+    } else if(y + dy > canvas.height-ballRadius) { 
+    //Add your if statement here to test if the ball and paddle have intersected
+        if(x > paddleX && x < paddleX + paddleWidth) {
         dy = -dy;
-    }  
+        }
+        else {
+         //CHANGE GAME OVER STATE
+         alert("You'll get it next time!");
+         document.location.reload();
+         clearInterval(interval);
+        }
+    }
+
 
     //Increment to change location of ball
     x += dx; //This is the same as x = x + dx
@@ -114,4 +141,5 @@ function keyUpHandler(e) {
 }
 
 //How often we clear and redraw the canvas
-setInterval(draw, 10);
+var interval = setInterval(draw,10)
+//setInterval(draw, 10);

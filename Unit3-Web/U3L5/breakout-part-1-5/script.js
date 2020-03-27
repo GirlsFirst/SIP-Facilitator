@@ -22,6 +22,7 @@ var canvas = document.getElementById("myCanvas");
 //Create the 2D drawing object
 var ctx = canvas.getContext("2d");
 
+//DEFINE ALL OF YOUR VARIABLES UP HERE
 var x = canvas.width/8; //Starts at 60
 var y = canvas.height-30; //Starts at 290
 
@@ -39,6 +40,7 @@ var rightPressed = false;
 var leftPressed = false;
 
 
+//DEFINE YOUR FUNCTIONS HERE
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
