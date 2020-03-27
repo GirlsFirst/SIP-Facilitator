@@ -9,63 +9,6 @@ Date Created: May 2020
 
 import random
 
-
-choices = ["rock", "paper", "scissors"]
-round = 1
-to_win = 3
-comp_wins = 0
-play_wins = 0
-
-while (comp_wins<3 and play_wins<3):
-    print("Round "+str(round))
-    player = input("Pick rock, paper, or scissors: ")
-    comp = random.choice(choices)
-    print ("The computer chose "+comp)
-    
-    if (player=='rock'):
-        #print ("here in rock")
-        if (comp=='rock'):
-            print("It's a tie!")
-        elif (comp == 'scissors'):
-            print ("You win!")
-            play_wins+=1
-        else:
-            print ("You lose...")
-            comp_wins+=1
-    elif (player == "paper"):
-        if (comp=='paper'):
-            print("It's a tie!")
-        elif (comp == 'rock'):
-            print ("You win!")
-            play_wins+=1
-        else:
-            print ("You lose...")
-            comp_wins+=1
-    elif (player == "scissors"):
-        if (comp=='scissors'):
-            print("It's a tie!")
-        elif (comp == 'paper'):
-            print ("You win!")
-            play_wins+=1
-        else:
-            print ("You lose...")
-            comp_wins+=1
-    else:
-        print ("I'm sorry, that is not a valid choice. Remember, spelling counts!")
-    
-    round+=1
-    
-    print("The score is now \tyou: "+str(play_wins)+ "\tcomp: "+str(comp_wins))
-    print("***********")
-
-
-if (play_wins==3):
-    print ("Congratulations! You beat the computer")
-else:
-    print("The computer beat you this time, but try again!")
-
-
-
 #Part 1: Introduction and Start of the Game
 #TODO: Write the opening introduction of your game
 print("Welcome to the automated Rock, Paper, Scissors Game!")
@@ -83,39 +26,66 @@ round = 0
 player_win = 0
 comp_win = 0
 round_max = input("How many rounds should we play? ")
-
-
-
+if (type(round_max) is not int):
+    print("Sorry, that's not a valid round amount")
+    round_max = 0
 
 #Part 2: Running Each Round
 #TODO: Update while loop to loop through as many rounds as you want for your game!
-while (round < round_max):            ):
+while (round < round_max):
     #TODO: Ask for player's choice
-
+    player = input("Pick rock, paper, or scissors: ")
+    player = player.lower()
 
     #Randomly chooses the computer's choice from the choices list.
     #The computer's choice will either be "rock", "paper", or "scissors"
     comp = random.choice(choices)
-    print ("The computer chose" + comp)
+    print ("The computer chose " + comp)
 
     #TODO: Add rules of game
-
-
-
-
-
-
-
+    if (player == "rock"):
+        if (comp == "rock"):
+            print("It's a tie")
+        elif (comp == "paper"):
+            print("You lose!")
+            comp_win+=1
+        else:
+            print("You win!")
+            player_win+=1
+    elif (player == "scissors"):
+        if (comp == "scissors"):
+            print("It's a tie")
+        elif (comp == "rock"):
+            print("You lose!")
+            comp_win+=1
+        else:
+            print("You win!")
+            player_win+=1
+    elif (player == "paper"):
+        if (comp == "paper"):
+            print("It's a tie")
+        elif (comp == "scissors"):
+            print("You lose!")
+            comp_win+=1
+        else:
+            print("You win!")
+            player_win+=1
+    else:
+        print("I'm sorry, that is not a valid choice. Remember spelling counts!")
 
     #TODO: Increment the round variable
-    
-    
+    round+=1
+    print("SCORE: Player - " + str(player_win) + " Computer - " + str(comp_win))
     
 #Part 3: Finishing Results and End of the Game
 #TODO: Determine the overall winner
-
-
-
-
+if (comp_win > player_win):
+    print("Sorry, you lost this time. The computer is the overall winner")
+elif (comp_win < player_win):
+    print("You are the overall winner! Congratulations")
+else:
+    print("Both you and the computer tied!")
 
 #TODO: Add a statement here to let your player know the game has ended!
+print("The game has ended. Thank you for playing.")
+print("Rerun the program to play again!")

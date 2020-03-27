@@ -27,7 +27,7 @@ while (              ):
     #Randomly chooses the computer's choice from the choices list.
     #The computer's choice will either be "rock", "paper", or "scissors"
     comp = random.choice(choices)
-    print ("The computer chose" + comp)
+    print ("The computer chose " + comp)
 
     #TODO: Add rules of game
 
