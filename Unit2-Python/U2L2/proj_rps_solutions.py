@@ -26,9 +26,11 @@ round = 0
 player_win = 0
 comp_win = 0
 round_max = input("How many rounds should we play? ")
-if (type(round_max) is not int):
+if (round_max.isdigit() == True):
+    round_max = int(round_max)
+else:
     print("Sorry, that's not a valid round amount")
-    round_max = 0
+
 
 #Part 2: Running Each Round
 #TODO: Update while loop to loop through as many rounds as you want for your game!
