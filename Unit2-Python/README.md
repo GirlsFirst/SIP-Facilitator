@@ -9,7 +9,7 @@ Python Libraries: random
 * proj_adventure_solutions.py
 * proj_adventure_starter.py
 
-### Lesson 2: Git and Lists
+### Lesson 2: Git and While Loops
 Python Libraries: random
 
 * loops.py
@@ -19,7 +19,7 @@ Python Libraries: random
 * project_rps_solutions-ext1-4.py (Solutions File with Extensions #1-4)
 * project_rps_solutions-ext5.py (Soltutions File with Extensions #1-5)
 
-### Lesson 3: Loops in Python
+### Lesson 3: For Loops and Lists in Python
 
 ### Lesson 4: Functions
 
