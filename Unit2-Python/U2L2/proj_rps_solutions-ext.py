@@ -1,7 +1,9 @@
 '''
-proj_rps_solutions.py
+proj_rps_solutions-ext.py
 Description: Project solution file for rock paper scissors for U2L2. 
 Project objective will explore variables, conditionals, and while loops.
+
+This solutions files contains all extensions to the project except for extensions #5
 
 Author: GWC Curriculum Team
 Date Created: May 2020
@@ -13,7 +15,6 @@ import random
 #TODO: Write the opening introduction of your game
 print("Welcome to the automated Rock, Paper, Scissors Game!")
 print("The typical rules of the game is as follows:")
-print("There will be 3 rounds in total")
 print("You will choose either rock, paper, or scissors (remember that spelling counts!)")
 print("Rock beats Scissors")
 print("Paper beats Rock")
@@ -26,12 +27,19 @@ choices = ["rock", "paper", "scissors"]
 round = 0
 player_win = 0
 comp_win = 0
+round_max = input("How many rounds should we play? ")
+if (round_max.isdigit() == True):
+    round_max = int(round_max)
+else:
+    print("Sorry, that's not a valid round amount")
+
 
 #Part 2: Running Each Round
 #TODO: Update while loop to loop through as many rounds as you want for your game!
-while (round < 3):
+while (round < round_max):
     #TODO: Ask for player's choice
     player = input("Pick rock, paper, or scissors: ")
+    player = player.lower()
 
     #Randomly chooses the computer's choice from the choices list.
     #The computer's choice will either be "rock", "paper", or "scissors"
@@ -71,6 +79,7 @@ while (round < 3):
 
     #TODO: Increment the round variable
     round+=1
+    print("SCORE: Player - " + str(player_win) + " Computer - " + str(comp_win))
     
 #Part 3: Finishing Results and End of the Game
 #TODO: Determine the overall winner
